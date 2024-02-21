@@ -1,0 +1,13 @@
+name: The Client Flow
+datasource: prometheus-ds
+steps:
+  - name: Get accounts
+    error_threshold: 0.05
+    filters:
+      service: account-service
+      span_name: GET /api/v1/accounts
+  - name: Init payment
+    error_threshold: 0.01
+    filters:
+      service: payment-service
+      span_name: POST /api/payments/create
