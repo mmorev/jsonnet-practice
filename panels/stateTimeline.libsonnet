@@ -7,7 +7,7 @@ local g = import '../grafonnet.libsonnet';
   local options = stateTimeline.options,
   local step = standardOptions.threshold.step,
 
-  availability(title, targets, w=24, h=5):
+  base(title, targets, w=24, h=5):
     stateTimeline.new(title)
     + stateTimeline.queryOptions.withTargets(targets)
     + stateTimeline.queryOptions.withInterval('1m')
